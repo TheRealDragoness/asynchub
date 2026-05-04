@@ -1,0 +1,2703 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 186 | Scripts: 1 | Modules: 10 | Tags: 10
+local CollectionService = game:GetService("CollectionService");
+local G2L = {};
+
+-- Loader
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[Loader]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- Loader.Notifications
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0.20341, 0, 0.71848, 0);
+G2L["2"]["Position"] = UDim2.new(0.82395, 0, 0.28152, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Notifications]];
+G2L["2"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Notifications.UIListLayout
+G2L["3"] = Instance.new("UIListLayout", G2L["2"]);
+G2L["3"]["Padding"] = UDim.new(0, -20);
+G2L["3"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+G2L["3"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- Loader.Core
+G2L["4"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["4"]["Name"] = [[Core]];
+
+
+-- Loader.Core.Notification
+G2L["5"] = Instance.new("Frame", G2L["4"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["Size"] = UDim2.new(0.86548, 0, 0.13333, 0);
+G2L["5"]["Position"] = UDim2.new(0, 0, 0.86667, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Name"] = [[Notification]];
+G2L["5"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.Notification.ActualBackground
+G2L["6"] = Instance.new("Frame", G2L["5"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["Size"] = UDim2.new(0.92375, 0, 0.72449, 0);
+G2L["6"]["Position"] = UDim2.new(0.03812, 0, 0.13265, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Name"] = [[ActualBackground]];
+
+
+-- Loader.Core.Notification.ActualBackground.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+
+
+
+-- Loader.Core.Notification.ActualBackground.UIGradient
+G2L["8"] = Instance.new("UIGradient", G2L["6"]);
+G2L["8"]["Rotation"] = 45;
+G2L["8"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(151, 151, 151)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(98, 98, 98))};
+
+
+-- Loader.Core.Notification.ActualBackground.UIStroke
+G2L["9"] = Instance.new("UIStroke", G2L["6"]);
+G2L["9"]["Transparency"] = 0.5;
+G2L["9"]["Thickness"] = 2;
+G2L["9"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.Notification.Noti
+G2L["a"] = Instance.new("TextLabel", G2L["5"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextScaled"] = true;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Size"] = UDim2.new(0.87977, 0, 0.5102, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[IDK BRO]];
+G2L["a"]["Name"] = [[Noti]];
+G2L["a"]["Position"] = UDim2.new(0.06158, 0, 0.23469, 0);
+
+
+-- Loader.Core.Notification.Noti.UIStroke
+G2L["b"] = Instance.new("UIStroke", G2L["a"]);
+G2L["b"]["Transparency"] = 0.2;
+G2L["b"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.Notification.Noti.UIGradient
+G2L["c"] = Instance.new("UIGradient", G2L["a"]);
+G2L["c"]["Rotation"] = 45;
+G2L["c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 171, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 255, 255))};
+
+
+-- Loader.Core.UIs
+G2L["d"] = Instance.new("Folder", G2L["4"]);
+G2L["d"]["Name"] = [[UIs]];
+
+
+-- Loader.Core.UIs.Hub
+G2L["e"] = Instance.new("Folder", G2L["d"]);
+G2L["e"]["Name"] = [[Hub]];
+
+
+-- Loader.Core.UIs.Hub.UI
+G2L["f"] = Instance.new("ScreenGui", G2L["e"]);
+G2L["f"]["Enabled"] = false;
+G2L["f"]["Name"] = [[UI]];
+G2L["f"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame
+G2L["10"] = Instance.new("Frame", G2L["f"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Size"] = UDim2.new(0.35932, 0, 0.84848, 0);
+G2L["10"]["Position"] = UDim2.new(0.32008, 6, 0.07527, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+G2L["11"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.UIGradient
+G2L["12"] = Instance.new("UIGradient", G2L["10"]);
+G2L["12"]["Rotation"] = 45;
+G2L["12"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(160, 133, 100)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(89, 76, 56))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.UIStroke
+G2L["13"] = Instance.new("UIStroke", G2L["10"]);
+G2L["13"]["Thickness"] = 4;
+G2L["13"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.name
+G2L["14"] = Instance.new("TextLabel", G2L["10"]);
+G2L["14"]["TextWrapped"] = true;
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextSize"] = 14;
+G2L["14"]["TextScaled"] = true;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Size"] = UDim2.new(0.50862, 0, 0.04378, 0);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Text"] = [[Async Hub]];
+G2L["14"]["Name"] = [[name]];
+G2L["14"]["Position"] = UDim2.new(0.24569, 0, 0.02074, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.name.UIGradient
+G2L["15"] = Instance.new("UIGradient", G2L["14"]);
+G2L["15"]["Rotation"] = 45;
+G2L["15"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.name.UIStroke
+G2L["16"] = Instance.new("UIStroke", G2L["14"]);
+G2L["16"]["Thickness"] = 1.5;
+G2L["16"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items
+G2L["17"] = Instance.new("Frame", G2L["10"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["Size"] = UDim2.new(0.86782, 0, 0.84101, 0);
+G2L["17"]["Position"] = UDim2.new(0.06609, 0, 0.11636, 0);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Name"] = [[items]];
+G2L["17"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.UIStroke
+G2L["18"] = Instance.new("UIStroke", G2L["17"]);
+G2L["18"]["Thickness"] = 4;
+G2L["18"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["17"]);
+G2L["19"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems
+G2L["1a"] = Instance.new("ScrollingFrame", G2L["17"]);
+G2L["1a"]["Active"] = true;
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["Name"] = [[actualItems]];
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["Size"] = UDim2.new(0.97682, 0, 0.97808, 0);
+G2L["1a"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Position"] = UDim2.new(0.01159, 0, 0.01096, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.UIListLayout
+G2L["1b"] = Instance.new("UIListLayout", G2L["1a"]);
+G2L["1b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed
+G2L["1c"] = Instance.new("Frame", G2L["1a"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["Size"] = UDim2.new(0, 100, 0, 117);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Name"] = [[Speed]];
+G2L["1c"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.actualBackground
+G2L["1d"] = Instance.new("Frame", G2L["1c"]);
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1d"]["Size"] = UDim2.new(5.57, 0, 0.8547, 0);
+G2L["1d"]["Position"] = UDim2.new(0.16, 0, 0.05044, 0);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Name"] = [[actualBackground]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.actualBackground.UIStroke
+G2L["1e"] = Instance.new("UIStroke", G2L["1d"]);
+G2L["1e"]["Thickness"] = 4;
+G2L["1e"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.actualBackground.UIGradient
+G2L["1f"] = Instance.new("UIGradient", G2L["1d"]);
+G2L["1f"]["Rotation"] = 45;
+G2L["1f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(86, 86, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 95, 142))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.actualBackground.UICorner
+G2L["20"] = Instance.new("UICorner", G2L["1d"]);
+G2L["20"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider
+G2L["21"] = Instance.new("Frame", G2L["1c"]);
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["21"]["Size"] = UDim2.new(1.37, 0, 0.42735, 0);
+G2L["21"]["Position"] = UDim2.new(4.13642, 0, 0.26198, 0);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Name"] = [[ToggleSlider]];
+-- Attributes
+G2L["21"]:SetAttribute([[DefaultPosition]], false);
+G2L["21"]:SetAttribute([[ItemType]], [[ToggleSlider]]);
+G2L["21"]:SetAttribute([[Position]], false);
+
+-- Tags
+CollectionService:AddTag(G2L["21"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.UIStroke
+G2L["22"] = Instance.new("UIStroke", G2L["21"]);
+G2L["22"]["Transparency"] = 0.5;
+G2L["22"]["Thickness"] = 2;
+G2L["22"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.UICorner
+G2L["23"] = Instance.new("UICorner", G2L["21"]);
+G2L["23"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.on
+G2L["24"] = Instance.new("Frame", G2L["21"]);
+G2L["24"]["Visible"] = false;
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["24"]["Position"] = UDim2.new(0.62788, 0, 0.11556, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Name"] = [[on]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.on.UIStroke
+G2L["25"] = Instance.new("UIStroke", G2L["24"]);
+G2L["25"]["Thickness"] = 4;
+G2L["25"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.on.UIGradient
+G2L["26"] = Instance.new("UIGradient", G2L["24"]);
+G2L["26"]["Rotation"] = 45;
+G2L["26"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.on.UICorner
+G2L["27"] = Instance.new("UICorner", G2L["24"]);
+G2L["27"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.off
+G2L["28"] = Instance.new("Frame", G2L["21"]);
+G2L["28"]["Visible"] = false;
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["28"]["Position"] = UDim2.new(0.05854, 0, 0.11556, 0);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Name"] = [[off]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.off.UIStroke
+G2L["29"] = Instance.new("UIStroke", G2L["28"]);
+G2L["29"]["Thickness"] = 4;
+G2L["29"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.off.UICorner
+G2L["2a"] = Instance.new("UICorner", G2L["28"]);
+G2L["2a"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.off.UIGradient
+G2L["2b"] = Instance.new("UIGradient", G2L["28"]);
+G2L["2b"]["Rotation"] = 45;
+G2L["2b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ToggleSlider.ActualButton
+G2L["2c"] = Instance.new("TextButton", G2L["21"]);
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["TextSize"] = 14;
+G2L["2c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2c"]["BackgroundTransparency"] = 1;
+G2L["2c"]["Size"] = UDim2.new(0, 137, 0, 50);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Text"] = [[]];
+G2L["2c"]["Name"] = [[ActualButton]];
+G2L["2c"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ItemName
+G2L["2d"] = Instance.new("TextLabel", G2L["1c"]);
+G2L["2d"]["TextWrapped"] = true;
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["TextSize"] = 14;
+G2L["2d"]["TextScaled"] = true;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["BackgroundTransparency"] = 1;
+G2L["2d"]["Size"] = UDim2.new(1.53, 0, 0.42735, 0);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Text"] = [[Speed]];
+G2L["2d"]["Name"] = [[ItemName]];
+G2L["2d"]["Position"] = UDim2.new(0, 0, 0.25788, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ItemName.UIGradient
+G2L["2e"] = Instance.new("UIGradient", G2L["2d"]);
+G2L["2e"]["Rotation"] = 45;
+G2L["2e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.ItemName.UIStroke
+G2L["2f"] = Instance.new("UIStroke", G2L["2d"]);
+G2L["2f"]["Thickness"] = 1.5;
+G2L["2f"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox
+G2L["30"] = Instance.new("Frame", G2L["1c"]);
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["Size"] = UDim2.new(2.13, 0, 0.49573, 0);
+G2L["30"]["Position"] = UDim2.new(1.82, 0, 0.22993, 0);
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["Name"] = [[TextBox]];
+-- Attributes
+G2L["30"]:SetAttribute([[ItemType]], [[TextBox]]);
+G2L["30"]:SetAttribute([[Output]], [[]]);
+
+-- Tags
+CollectionService:AddTag(G2L["30"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.UIStroke
+G2L["31"] = Instance.new("UIStroke", G2L["30"]);
+G2L["31"]["Thickness"] = 4;
+G2L["31"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.UIGradient
+G2L["32"] = Instance.new("UIGradient", G2L["30"]);
+G2L["32"]["Rotation"] = 45;
+G2L["32"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(86, 86, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 95, 142))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.UICorner
+G2L["33"] = Instance.new("UICorner", G2L["30"]);
+G2L["33"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.TextBox
+G2L["34"] = Instance.new("TextBox", G2L["30"]);
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["TextWrapped"] = true;
+G2L["34"]["TextSize"] = 14;
+G2L["34"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["TextScaled"] = true;
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["34"]["ClearTextOnFocus"] = false;
+G2L["34"]["PlaceholderText"] = [[SPEED (NUMBER)]];
+G2L["34"]["Size"] = UDim2.new(0, 199, 0, 52);
+G2L["34"]["Position"] = UDim2.new(0.03286, 0, 0.05172, 0);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Text"] = [[5]];
+G2L["34"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.TextBox.UICorner
+G2L["35"] = Instance.new("UICorner", G2L["34"]);
+G2L["35"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.TextBox.UIStroke
+G2L["36"] = Instance.new("UIStroke", G2L["34"]);
+G2L["36"]["Thickness"] = 1.5;
+G2L["36"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Speed.TextBox.TextBox.UIGradient
+G2L["37"] = Instance.new("UIGradient", G2L["34"]);
+G2L["37"]["Rotation"] = 45;
+G2L["37"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP
+G2L["38"] = Instance.new("Frame", G2L["1a"]);
+G2L["38"]["BorderSizePixel"] = 0;
+G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["38"]["Size"] = UDim2.new(0, 100, 0, 117);
+G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["38"]["Name"] = [[ESP]];
+G2L["38"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.actualBackground
+G2L["39"] = Instance.new("Frame", G2L["38"]);
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["39"]["Size"] = UDim2.new(5.57, 0, 0.8547, 0);
+G2L["39"]["Position"] = UDim2.new(0.16, 0, 0.05044, 0);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Name"] = [[actualBackground]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.actualBackground.UIStroke
+G2L["3a"] = Instance.new("UIStroke", G2L["39"]);
+G2L["3a"]["Thickness"] = 4;
+G2L["3a"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.actualBackground.UIGradient
+G2L["3b"] = Instance.new("UIGradient", G2L["39"]);
+G2L["3b"]["Rotation"] = 45;
+G2L["3b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(86, 86, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 95, 142))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.actualBackground.UICorner
+G2L["3c"] = Instance.new("UICorner", G2L["39"]);
+G2L["3c"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider
+G2L["3d"] = Instance.new("Frame", G2L["38"]);
+G2L["3d"]["BorderSizePixel"] = 0;
+G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["3d"]["Size"] = UDim2.new(1.37, 0, 0.42735, 0);
+G2L["3d"]["Position"] = UDim2.new(1.44642, 0, 0.40728, 0);
+G2L["3d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3d"]["Name"] = [[PlayerSlider]];
+-- Attributes
+G2L["3d"]:SetAttribute([[DefaultPosition]], false);
+G2L["3d"]:SetAttribute([[ItemType]], [[ToggleSlider]]);
+G2L["3d"]:SetAttribute([[Position]], false);
+
+-- Tags
+CollectionService:AddTag(G2L["3d"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.UIStroke
+G2L["3e"] = Instance.new("UIStroke", G2L["3d"]);
+G2L["3e"]["Transparency"] = 0.5;
+G2L["3e"]["Thickness"] = 2;
+G2L["3e"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.UICorner
+G2L["3f"] = Instance.new("UICorner", G2L["3d"]);
+G2L["3f"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.on
+G2L["40"] = Instance.new("Frame", G2L["3d"]);
+G2L["40"]["Visible"] = false;
+G2L["40"]["BorderSizePixel"] = 0;
+G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["40"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["40"]["Position"] = UDim2.new(0.62788, 0, 0.11556, 0);
+G2L["40"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["40"]["Name"] = [[on]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.on.UIStroke
+G2L["41"] = Instance.new("UIStroke", G2L["40"]);
+G2L["41"]["Thickness"] = 4;
+G2L["41"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.on.UIGradient
+G2L["42"] = Instance.new("UIGradient", G2L["40"]);
+G2L["42"]["Rotation"] = 45;
+G2L["42"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.on.UICorner
+G2L["43"] = Instance.new("UICorner", G2L["40"]);
+G2L["43"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.off
+G2L["44"] = Instance.new("Frame", G2L["3d"]);
+G2L["44"]["Visible"] = false;
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["44"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["44"]["Position"] = UDim2.new(0.05854, 0, 0.11556, 0);
+G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["Name"] = [[off]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.off.UIStroke
+G2L["45"] = Instance.new("UIStroke", G2L["44"]);
+G2L["45"]["Thickness"] = 4;
+G2L["45"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.off.UICorner
+G2L["46"] = Instance.new("UICorner", G2L["44"]);
+G2L["46"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.off.UIGradient
+G2L["47"] = Instance.new("UIGradient", G2L["44"]);
+G2L["47"]["Rotation"] = 45;
+G2L["47"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.PlayerSlider.ActualButton
+G2L["48"] = Instance.new("TextButton", G2L["3d"]);
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["TextSize"] = 14;
+G2L["48"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["48"]["BackgroundTransparency"] = 1;
+G2L["48"]["Size"] = UDim2.new(0, 137, 0, 50);
+G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["Text"] = [[]];
+G2L["48"]["Name"] = [[ActualButton]];
+G2L["48"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.ItemName
+G2L["49"] = Instance.new("TextLabel", G2L["38"]);
+G2L["49"]["TextWrapped"] = true;
+G2L["49"]["BorderSizePixel"] = 0;
+G2L["49"]["TextSize"] = 14;
+G2L["49"]["TextScaled"] = true;
+G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["49"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["BackgroundTransparency"] = 1;
+G2L["49"]["Size"] = UDim2.new(1.53, 0, 0.42735, 0);
+G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["49"]["Text"] = [[ESP]];
+G2L["49"]["Name"] = [[ItemName]];
+G2L["49"]["Position"] = UDim2.new(-0.18, 0, 0.25788, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.ItemName.UIGradient
+G2L["4a"] = Instance.new("UIGradient", G2L["49"]);
+G2L["4a"]["Rotation"] = 45;
+G2L["4a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.ItemName.UIStroke
+G2L["4b"] = Instance.new("UIStroke", G2L["49"]);
+G2L["4b"]["Thickness"] = 1.5;
+G2L["4b"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider
+G2L["4c"] = Instance.new("Frame", G2L["38"]);
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["4c"]["Size"] = UDim2.new(1.37, 0, 0.42735, 0);
+G2L["4c"]["Position"] = UDim2.new(3.70642, 0, 0.40728, 0);
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["Name"] = [[MonsterSlider]];
+-- Attributes
+G2L["4c"]:SetAttribute([[DefaultPosition]], false);
+G2L["4c"]:SetAttribute([[ItemType]], [[ToggleSlider]]);
+G2L["4c"]:SetAttribute([[Position]], false);
+
+-- Tags
+CollectionService:AddTag(G2L["4c"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.UIStroke
+G2L["4d"] = Instance.new("UIStroke", G2L["4c"]);
+G2L["4d"]["Transparency"] = 0.5;
+G2L["4d"]["Thickness"] = 2;
+G2L["4d"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.UICorner
+G2L["4e"] = Instance.new("UICorner", G2L["4c"]);
+G2L["4e"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.on
+G2L["4f"] = Instance.new("Frame", G2L["4c"]);
+G2L["4f"]["Visible"] = false;
+G2L["4f"]["BorderSizePixel"] = 0;
+G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4f"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["4f"]["Position"] = UDim2.new(0.62788, 0, 0.11556, 0);
+G2L["4f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4f"]["Name"] = [[on]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.on.UIStroke
+G2L["50"] = Instance.new("UIStroke", G2L["4f"]);
+G2L["50"]["Thickness"] = 4;
+G2L["50"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.on.UIGradient
+G2L["51"] = Instance.new("UIGradient", G2L["4f"]);
+G2L["51"]["Rotation"] = 45;
+G2L["51"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.on.UICorner
+G2L["52"] = Instance.new("UICorner", G2L["4f"]);
+G2L["52"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.off
+G2L["53"] = Instance.new("Frame", G2L["4c"]);
+G2L["53"]["Visible"] = false;
+G2L["53"]["BorderSizePixel"] = 0;
+G2L["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["53"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["53"]["Position"] = UDim2.new(0.05854, 0, 0.11556, 0);
+G2L["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["53"]["Name"] = [[off]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.off.UIStroke
+G2L["54"] = Instance.new("UIStroke", G2L["53"]);
+G2L["54"]["Thickness"] = 4;
+G2L["54"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.off.UICorner
+G2L["55"] = Instance.new("UICorner", G2L["53"]);
+G2L["55"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.off.UIGradient
+G2L["56"] = Instance.new("UIGradient", G2L["53"]);
+G2L["56"]["Rotation"] = 45;
+G2L["56"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.MonsterSlider.ActualButton
+G2L["57"] = Instance.new("TextButton", G2L["4c"]);
+G2L["57"]["BorderSizePixel"] = 0;
+G2L["57"]["TextSize"] = 14;
+G2L["57"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["57"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["57"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["57"]["BackgroundTransparency"] = 1;
+G2L["57"]["Size"] = UDim2.new(0, 137, 0, 50);
+G2L["57"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["57"]["Text"] = [[]];
+G2L["57"]["Name"] = [[ActualButton]];
+G2L["57"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T
+G2L["58"] = Instance.new("TextLabel", G2L["38"]);
+G2L["58"]["TextWrapped"] = true;
+G2L["58"]["BorderSizePixel"] = 0;
+G2L["58"]["TextSize"] = 14;
+G2L["58"]["TextScaled"] = true;
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["58"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["BackgroundTransparency"] = 1;
+G2L["58"]["Size"] = UDim2.new(1.53, 0, 0.2906, 0);
+G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["Text"] = [[Players]];
+G2L["58"]["Name"] = [[T]];
+G2L["58"]["Position"] = UDim2.new(1.35, 0, 0.11258, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T.UIGradient
+G2L["59"] = Instance.new("UIGradient", G2L["58"]);
+G2L["59"]["Rotation"] = 45;
+G2L["59"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T.UIStroke
+G2L["5a"] = Instance.new("UIStroke", G2L["58"]);
+G2L["5a"]["Thickness"] = 1.5;
+G2L["5a"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T
+G2L["5b"] = Instance.new("TextLabel", G2L["38"]);
+G2L["5b"]["TextWrapped"] = true;
+G2L["5b"]["BorderSizePixel"] = 0;
+G2L["5b"]["TextSize"] = 14;
+G2L["5b"]["TextScaled"] = true;
+G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5b"]["BackgroundTransparency"] = 1;
+G2L["5b"]["Size"] = UDim2.new(1.53, 0, 0.2906, 0);
+G2L["5b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5b"]["Text"] = [[Monsters]];
+G2L["5b"]["Name"] = [[T]];
+G2L["5b"]["Position"] = UDim2.new(3.62, 0, 0.11258, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T.UIGradient
+G2L["5c"] = Instance.new("UIGradient", G2L["5b"]);
+G2L["5c"]["Rotation"] = 45;
+G2L["5c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.ESP.T.UIStroke
+G2L["5d"] = Instance.new("UIStroke", G2L["5b"]);
+G2L["5d"]["Thickness"] = 1.5;
+G2L["5d"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater
+G2L["5e"] = Instance.new("Frame", G2L["1a"]);
+G2L["5e"]["BorderSizePixel"] = 0;
+G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["Size"] = UDim2.new(0, 100, 0, 117);
+G2L["5e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5e"]["Name"] = [[Floater]];
+G2L["5e"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.actualBackground
+G2L["5f"] = Instance.new("Frame", G2L["5e"]);
+G2L["5f"]["BorderSizePixel"] = 0;
+G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5f"]["Size"] = UDim2.new(5.57, 0, 0.8547, 0);
+G2L["5f"]["Position"] = UDim2.new(0.16, 0, 0.05044, 0);
+G2L["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5f"]["Name"] = [[actualBackground]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.actualBackground.UIStroke
+G2L["60"] = Instance.new("UIStroke", G2L["5f"]);
+G2L["60"]["Thickness"] = 4;
+G2L["60"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.actualBackground.UIGradient
+G2L["61"] = Instance.new("UIGradient", G2L["5f"]);
+G2L["61"]["Rotation"] = 45;
+G2L["61"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(86, 86, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 95, 142))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.actualBackground.UICorner
+G2L["62"] = Instance.new("UICorner", G2L["5f"]);
+G2L["62"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.up
+G2L["63"] = Instance.new("Frame", G2L["5e"]);
+G2L["63"]["BorderSizePixel"] = 0;
+G2L["63"]["BackgroundColor3"] = Color3.fromRGB(0, 171, 0);
+G2L["63"]["Size"] = UDim2.new(0.6, 0, 0.42735, 0);
+G2L["63"]["Position"] = UDim2.new(2.11642, 0, 0.40728, 0);
+G2L["63"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["63"]["Name"] = [[up]];
+-- Attributes
+G2L["63"]:SetAttribute([[Activated]], false);
+G2L["63"]:SetAttribute([[ItemType]], [[Button]]);
+
+-- Tags
+CollectionService:AddTag(G2L["63"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.up.UIStroke
+G2L["64"] = Instance.new("UIStroke", G2L["63"]);
+G2L["64"]["Transparency"] = 0.5;
+G2L["64"]["Thickness"] = 2;
+G2L["64"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.up.UICorner
+G2L["65"] = Instance.new("UICorner", G2L["63"]);
+G2L["65"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.up.ActualButton
+G2L["66"] = Instance.new("TextButton", G2L["63"]);
+G2L["66"]["BorderSizePixel"] = 0;
+G2L["66"]["TextSize"] = 14;
+G2L["66"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["66"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["66"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["66"]["BackgroundTransparency"] = 1;
+G2L["66"]["Size"] = UDim2.new(0, 60, 0, 50);
+G2L["66"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["66"]["Text"] = [[]];
+G2L["66"]["Name"] = [[ActualButton]];
+G2L["66"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.ItemName
+G2L["67"] = Instance.new("TextLabel", G2L["5e"]);
+G2L["67"]["TextWrapped"] = true;
+G2L["67"]["BorderSizePixel"] = 0;
+G2L["67"]["TextSize"] = 14;
+G2L["67"]["TextScaled"] = true;
+G2L["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["67"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["67"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["67"]["BackgroundTransparency"] = 1;
+G2L["67"]["Size"] = UDim2.new(1.3, 0, 0.42735, 0);
+G2L["67"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["67"]["Text"] = [[FLOATER]];
+G2L["67"]["Name"] = [[ItemName]];
+G2L["67"]["Position"] = UDim2.new(0.23, 0, 0.25788, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.ItemName.UIGradient
+G2L["68"] = Instance.new("UIGradient", G2L["67"]);
+G2L["68"]["Rotation"] = 45;
+G2L["68"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.ItemName.UIStroke
+G2L["69"] = Instance.new("UIStroke", G2L["67"]);
+G2L["69"]["Thickness"] = 1.5;
+G2L["69"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle
+G2L["6a"] = Instance.new("Frame", G2L["5e"]);
+G2L["6a"]["BorderSizePixel"] = 0;
+G2L["6a"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["6a"]["Size"] = UDim2.new(1.37, 0, 0.42735, 0);
+G2L["6a"]["Position"] = UDim2.new(4.13642, 0, 0.40728, 0);
+G2L["6a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6a"]["Name"] = [[toggle]];
+-- Attributes
+G2L["6a"]:SetAttribute([[DefaultPosition]], false);
+G2L["6a"]:SetAttribute([[ItemType]], [[ToggleSlider]]);
+G2L["6a"]:SetAttribute([[Position]], false);
+
+-- Tags
+CollectionService:AddTag(G2L["6a"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.UIStroke
+G2L["6b"] = Instance.new("UIStroke", G2L["6a"]);
+G2L["6b"]["Transparency"] = 0.5;
+G2L["6b"]["Thickness"] = 2;
+G2L["6b"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.UICorner
+G2L["6c"] = Instance.new("UICorner", G2L["6a"]);
+G2L["6c"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.on
+G2L["6d"] = Instance.new("Frame", G2L["6a"]);
+G2L["6d"]["Visible"] = false;
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6d"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["6d"]["Position"] = UDim2.new(0.62788, 0, 0.11556, 0);
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["Name"] = [[on]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.on.UIStroke
+G2L["6e"] = Instance.new("UIStroke", G2L["6d"]);
+G2L["6e"]["Thickness"] = 4;
+G2L["6e"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.on.UIGradient
+G2L["6f"] = Instance.new("UIGradient", G2L["6d"]);
+G2L["6f"]["Rotation"] = 45;
+G2L["6f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.on.UICorner
+G2L["70"] = Instance.new("UICorner", G2L["6d"]);
+G2L["70"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.off
+G2L["71"] = Instance.new("Frame", G2L["6a"]);
+G2L["71"]["Visible"] = false;
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["71"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["71"]["Position"] = UDim2.new(0.05854, 0, 0.11556, 0);
+G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["Name"] = [[off]];
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.off.UIStroke
+G2L["72"] = Instance.new("UIStroke", G2L["71"]);
+G2L["72"]["Thickness"] = 4;
+G2L["72"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.off.UICorner
+G2L["73"] = Instance.new("UICorner", G2L["71"]);
+G2L["73"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.off.UIGradient
+G2L["74"] = Instance.new("UIGradient", G2L["71"]);
+G2L["74"]["Rotation"] = 45;
+G2L["74"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.toggle.ActualButton
+G2L["75"] = Instance.new("TextButton", G2L["6a"]);
+G2L["75"]["BorderSizePixel"] = 0;
+G2L["75"]["TextSize"] = 14;
+G2L["75"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["75"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["75"]["BackgroundTransparency"] = 1;
+G2L["75"]["Size"] = UDim2.new(0, 137, 0, 50);
+G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["75"]["Text"] = [[]];
+G2L["75"]["Name"] = [[ActualButton]];
+G2L["75"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.T
+G2L["76"] = Instance.new("TextLabel", G2L["5e"]);
+G2L["76"]["TextWrapped"] = true;
+G2L["76"]["BorderSizePixel"] = 0;
+G2L["76"]["TextSize"] = 14;
+G2L["76"]["TextScaled"] = true;
+G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["76"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["76"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["76"]["BackgroundTransparency"] = 1;
+G2L["76"]["Size"] = UDim2.new(1.53, 0, 0.2906, 0);
+G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["76"]["Text"] = [[Enable]];
+G2L["76"]["Name"] = [[T]];
+G2L["76"]["Position"] = UDim2.new(4.05, 0, 0.11258, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.T.UIGradient
+G2L["77"] = Instance.new("UIGradient", G2L["76"]);
+G2L["77"]["Rotation"] = 45;
+G2L["77"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.T.UIStroke
+G2L["78"] = Instance.new("UIStroke", G2L["76"]);
+G2L["78"]["Thickness"] = 1.5;
+G2L["78"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.down
+G2L["79"] = Instance.new("Frame", G2L["5e"]);
+G2L["79"]["BorderSizePixel"] = 0;
+G2L["79"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["79"]["Size"] = UDim2.new(0.6, 0, 0.42735, 0);
+G2L["79"]["Position"] = UDim2.new(3.01642, 0, 0.39873, 0);
+G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["Name"] = [[down]];
+-- Attributes
+G2L["79"]:SetAttribute([[Activated]], false);
+G2L["79"]:SetAttribute([[ItemType]], [[Button]]);
+
+-- Tags
+CollectionService:AddTag(G2L["79"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.down.UIStroke
+G2L["7a"] = Instance.new("UIStroke", G2L["79"]);
+G2L["7a"]["Transparency"] = 0.5;
+G2L["7a"]["Thickness"] = 2;
+G2L["7a"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.down.UICorner
+G2L["7b"] = Instance.new("UICorner", G2L["79"]);
+G2L["7b"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.down.ActualButton
+G2L["7c"] = Instance.new("TextButton", G2L["79"]);
+G2L["7c"]["BorderSizePixel"] = 0;
+G2L["7c"]["TextSize"] = 14;
+G2L["7c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7c"]["BackgroundTransparency"] = 1;
+G2L["7c"]["Size"] = UDim2.new(0, 60, 0, 50);
+G2L["7c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7c"]["Text"] = [[]];
+G2L["7c"]["Name"] = [[ActualButton]];
+G2L["7c"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.UP-
+G2L["7d"] = Instance.new("TextLabel", G2L["5e"]);
+G2L["7d"]["TextWrapped"] = true;
+G2L["7d"]["BorderSizePixel"] = 0;
+G2L["7d"]["TextSize"] = 14;
+G2L["7d"]["TextScaled"] = true;
+G2L["7d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7d"]["BackgroundTransparency"] = 1;
+G2L["7d"]["Size"] = UDim2.new(1.53, 0, 0.2906, 0);
+G2L["7d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7d"]["Text"] = [[UP]];
+G2L["7d"]["Name"] = [[UP-]];
+G2L["7d"]["Position"] = UDim2.new(1.65, 0, 0.10403, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.UP-.UIGradient
+G2L["7e"] = Instance.new("UIGradient", G2L["7d"]);
+G2L["7e"]["Rotation"] = 45;
+G2L["7e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.UP-.UIStroke
+G2L["7f"] = Instance.new("UIStroke", G2L["7d"]);
+G2L["7f"]["Thickness"] = 1.5;
+G2L["7f"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.DOWN-
+G2L["80"] = Instance.new("TextLabel", G2L["5e"]);
+G2L["80"]["TextWrapped"] = true;
+G2L["80"]["BorderSizePixel"] = 0;
+G2L["80"]["TextSize"] = 14;
+G2L["80"]["TextScaled"] = true;
+G2L["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["80"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["BackgroundTransparency"] = 1;
+G2L["80"]["Size"] = UDim2.new(1.53, 0, 0.2906, 0);
+G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["Text"] = [[DOWN]];
+G2L["80"]["Name"] = [[DOWN-]];
+G2L["80"]["Position"] = UDim2.new(2.55, 0, 0.10403, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.DOWN-.UIGradient
+G2L["81"] = Instance.new("UIGradient", G2L["80"]);
+G2L["81"]["Rotation"] = 45;
+G2L["81"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.items.actualItems.Floater.DOWN-.UIStroke
+G2L["82"] = Instance.new("UIStroke", G2L["80"]);
+G2L["82"]["Thickness"] = 1.5;
+G2L["82"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.UIDragDetector
+G2L["83"] = Instance.new("UIDragDetector", G2L["10"]);
+
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.Close
+G2L["84"] = Instance.new("TextButton", G2L["10"]);
+G2L["84"]["TextWrapped"] = true;
+G2L["84"]["BorderSizePixel"] = 0;
+G2L["84"]["TextSize"] = 14;
+G2L["84"]["TextScaled"] = true;
+G2L["84"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["84"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["84"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["84"]["BackgroundTransparency"] = 1;
+G2L["84"]["Size"] = UDim2.new(0, 61, 0, 47);
+G2L["84"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["84"]["Text"] = [[X]];
+G2L["84"]["Name"] = [[Close]];
+G2L["84"]["Position"] = UDim2.new(0.91236, 0, 0.01037, 0);
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.Close.UIStroke
+G2L["85"] = Instance.new("UIStroke", G2L["84"]);
+G2L["85"]["Thickness"] = 2;
+
+
+-- Loader.Core.UIs.Hub.UI.Frame.Close.UIGradient
+G2L["86"] = Instance.new("UIGradient", G2L["84"]);
+G2L["86"]["Rotation"] = 45;
+G2L["86"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 0, 0))};
+
+
+-- Loader.Core.UIs.Hub.Functions
+G2L["87"] = Instance.new("ModuleScript", G2L["e"]);
+G2L["87"]["Name"] = [[Functions]];
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup
+G2L["88"] = Instance.new("ModuleScript", G2L["87"]);
+G2L["88"]["Name"] = [[UI-ItemSetup]];
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes
+G2L["89"] = Instance.new("Folder", G2L["88"]);
+G2L["89"]["Name"] = [[ItemTypes]];
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox
+G2L["8a"] = Instance.new("Frame", G2L["89"]);
+G2L["8a"]["Visible"] = false;
+G2L["8a"]["BorderSizePixel"] = 0;
+G2L["8a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8a"]["Size"] = UDim2.new(2.13, 0, 0.49573, 0);
+G2L["8a"]["Position"] = UDim2.new(1.82, 0, 0.22993, 0);
+G2L["8a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8a"]["Name"] = [[TextBox]];
+-- Attributes
+G2L["8a"]:SetAttribute([[ItemType]], [[TextBox]]);
+G2L["8a"]:SetAttribute([[Output]], [[]]);
+
+-- Tags
+CollectionService:AddTag(G2L["8a"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.UIStroke
+G2L["8b"] = Instance.new("UIStroke", G2L["8a"]);
+G2L["8b"]["Thickness"] = 4;
+G2L["8b"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.UIGradient
+G2L["8c"] = Instance.new("UIGradient", G2L["8a"]);
+G2L["8c"]["Rotation"] = 45;
+G2L["8c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(86, 86, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 95, 142))};
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.UICorner
+G2L["8d"] = Instance.new("UICorner", G2L["8a"]);
+G2L["8d"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.TextBox
+G2L["8e"] = Instance.new("TextBox", G2L["8a"]);
+G2L["8e"]["BorderSizePixel"] = 0;
+G2L["8e"]["TextWrapped"] = true;
+G2L["8e"]["TextSize"] = 14;
+G2L["8e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8e"]["TextScaled"] = true;
+G2L["8e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8e"]["ClearTextOnFocus"] = false;
+G2L["8e"]["PlaceholderText"] = [[SPEED (NUMBER)]];
+G2L["8e"]["Size"] = UDim2.new(0, 199, 0, 52);
+G2L["8e"]["Position"] = UDim2.new(0.03286, 0, 0.05172, 0);
+G2L["8e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8e"]["Text"] = [[5]];
+G2L["8e"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.TextBox.UICorner
+G2L["8f"] = Instance.new("UICorner", G2L["8e"]);
+G2L["8f"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.TextBox.UIStroke
+G2L["90"] = Instance.new("UIStroke", G2L["8e"]);
+G2L["90"]["Thickness"] = 1.5;
+G2L["90"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.TextBox.TextBox.UIGradient
+G2L["91"] = Instance.new("UIGradient", G2L["8e"]);
+G2L["91"]["Rotation"] = 45;
+G2L["91"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 227, 181)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(109, 163, 163))};
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider
+G2L["92"] = Instance.new("Frame", G2L["89"]);
+G2L["92"]["Visible"] = false;
+G2L["92"]["BorderSizePixel"] = 0;
+G2L["92"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["92"]["Size"] = UDim2.new(1.37, 0, 0.42735, 0);
+G2L["92"]["Position"] = UDim2.new(4.13642, 0, 0.26198, 0);
+G2L["92"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["92"]["Name"] = [[ToggleSlider]];
+-- Attributes
+G2L["92"]:SetAttribute([[DefaultPosition]], false);
+G2L["92"]:SetAttribute([[ItemType]], [[ToggleSlider]]);
+G2L["92"]:SetAttribute([[Position]], false);
+
+-- Tags
+CollectionService:AddTag(G2L["92"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.UIStroke
+G2L["93"] = Instance.new("UIStroke", G2L["92"]);
+G2L["93"]["Transparency"] = 0.5;
+G2L["93"]["Thickness"] = 2;
+G2L["93"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.UICorner
+G2L["94"] = Instance.new("UICorner", G2L["92"]);
+G2L["94"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.off
+G2L["95"] = Instance.new("Frame", G2L["92"]);
+G2L["95"]["Visible"] = false;
+G2L["95"]["BorderSizePixel"] = 0;
+G2L["95"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["95"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["95"]["Position"] = UDim2.new(0.62788, 0, 0.11556, 0);
+G2L["95"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["95"]["Name"] = [[off]];
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.off.UIStroke
+G2L["96"] = Instance.new("UIStroke", G2L["95"]);
+G2L["96"]["Thickness"] = 4;
+G2L["96"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.off.UIGradient
+G2L["97"] = Instance.new("UIGradient", G2L["95"]);
+G2L["97"]["Rotation"] = 45;
+G2L["97"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.off.UICorner
+G2L["98"] = Instance.new("UICorner", G2L["95"]);
+G2L["98"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.on
+G2L["99"] = Instance.new("Frame", G2L["92"]);
+G2L["99"]["Visible"] = false;
+G2L["99"]["BorderSizePixel"] = 0;
+G2L["99"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["99"]["Size"] = UDim2.new(0, 42, 0, 36);
+G2L["99"]["Position"] = UDim2.new(0.05854, 0, 0.11556, 0);
+G2L["99"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["99"]["Name"] = [[on]];
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.on.UIStroke
+G2L["9a"] = Instance.new("UIStroke", G2L["99"]);
+G2L["9a"]["Thickness"] = 4;
+G2L["9a"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.on.UICorner
+G2L["9b"] = Instance.new("UICorner", G2L["99"]);
+G2L["9b"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.on.UIGradient
+G2L["9c"] = Instance.new("UIGradient", G2L["99"]);
+G2L["9c"]["Rotation"] = 45;
+G2L["9c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(84, 84, 84))};
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.ToggleSlider.ActualButton
+G2L["9d"] = Instance.new("TextButton", G2L["92"]);
+G2L["9d"]["BorderSizePixel"] = 0;
+G2L["9d"]["TextSize"] = 14;
+G2L["9d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9d"]["BackgroundTransparency"] = 1;
+G2L["9d"]["Size"] = UDim2.new(0, 137, 0, 50);
+G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9d"]["Text"] = [[]];
+G2L["9d"]["Name"] = [[ActualButton]];
+G2L["9d"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.Button
+G2L["9e"] = Instance.new("Frame", G2L["89"]);
+G2L["9e"]["Visible"] = false;
+G2L["9e"]["BorderSizePixel"] = 0;
+G2L["9e"]["BackgroundColor3"] = Color3.fromRGB(213, 0, 0);
+G2L["9e"]["Size"] = UDim2.new(0.6, 0, 0.42735, 0);
+G2L["9e"]["Position"] = UDim2.new(3.01642, 0, 0.39873, 0);
+G2L["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9e"]["Name"] = [[Button]];
+-- Attributes
+G2L["9e"]:SetAttribute([[Activated]], false);
+G2L["9e"]:SetAttribute([[ItemType]], [[Button]]);
+
+-- Tags
+CollectionService:AddTag(G2L["9e"], [[Item]]);
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.Button.UIStroke
+G2L["9f"] = Instance.new("UIStroke", G2L["9e"]);
+G2L["9f"]["Transparency"] = 0.5;
+G2L["9f"]["Thickness"] = 2;
+G2L["9f"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.Button.UICorner
+G2L["a0"] = Instance.new("UICorner", G2L["9e"]);
+G2L["a0"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- Loader.Core.UIs.Hub.Functions.UI-ItemSetup.ItemTypes.Button.ActualButton
+G2L["a1"] = Instance.new("TextButton", G2L["9e"]);
+G2L["a1"]["BorderSizePixel"] = 0;
+G2L["a1"]["TextSize"] = 14;
+G2L["a1"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a1"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a1"]["BackgroundTransparency"] = 1;
+G2L["a1"]["Size"] = UDim2.new(0, 60, 0, 50);
+G2L["a1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a1"]["Text"] = [[]];
+G2L["a1"]["Name"] = [[ActualButton]];
+G2L["a1"]["Position"] = UDim2.new(-0.00358, 0, -0.0065, 0);
+
+
+-- Loader.Core.UIs.Hub.Functions.Functions
+G2L["a2"] = Instance.new("Folder", G2L["87"]);
+G2L["a2"]["Name"] = [[Functions]];
+
+
+-- Loader.Core.UIs.Hub.Functions.Functions.Floater
+G2L["a3"] = Instance.new("ModuleScript", G2L["a2"]);
+G2L["a3"]["Name"] = [[Floater]];
+
+
+-- Loader.Core.UIs.Hub.Functions.Functions.ESP
+G2L["a4"] = Instance.new("ModuleScript", G2L["a2"]);
+G2L["a4"]["Name"] = [[ESP]];
+
+
+-- Loader.Core.UIs.Hub.Functions.Functions.Speed
+G2L["a5"] = Instance.new("ModuleScript", G2L["a2"]);
+G2L["a5"]["Name"] = [[Speed]];
+
+
+-- Loader.Core.UIs.Hub.Functions.Notify
+G2L["a6"] = Instance.new("ModuleScript", G2L["87"]);
+G2L["a6"]["Name"] = [[Notify]];
+
+
+-- Loader.Core.Whitelist
+G2L["a7"] = Instance.new("ModuleScript", G2L["4"]);
+G2L["a7"]["Name"] = [[Whitelist]];
+
+
+-- Loader.Loader
+G2L["a8"] = Instance.new("LocalScript", G2L["1"]);
+G2L["a8"]["Name"] = [[Loader]];
+
+
+-- Loader.Encryption
+G2L["a9"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["a9"]["Name"] = [[Encryption]];
+
+
+-- Loader.Encrypt
+G2L["aa"] = Instance.new("Folder", G2L["1"]);
+G2L["aa"]["Name"] = [[Encrypt]];
+
+
+-- Loader.Encrypt.Password
+G2L["ab"] = Instance.new("Frame", G2L["aa"]);
+G2L["ab"]["Visible"] = false;
+G2L["ab"]["BorderSizePixel"] = 0;
+G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ab"]["Size"] = UDim2.new(0.44915, 0, 0.36559, 0);
+G2L["ab"]["Position"] = UDim2.new(0.27517, 0, 0.31672, 0);
+G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ab"]["Name"] = [[Password]];
+G2L["ab"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Encrypt.Password.UICorner
+G2L["ac"] = Instance.new("UICorner", G2L["ab"]);
+
+
+
+-- Loader.Encrypt.Password.Background
+G2L["ad"] = Instance.new("Frame", G2L["ab"]);
+G2L["ad"]["BorderSizePixel"] = 0;
+G2L["ad"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ad"]["Size"] = UDim2.new(0, 411, 0, 135);
+G2L["ad"]["Position"] = UDim2.new(0.26322, 0, 0.36364, 0);
+G2L["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ad"]["Name"] = [[Background]];
+
+
+-- Loader.Encrypt.Password.Background.UIStroke
+G2L["ae"] = Instance.new("UIStroke", G2L["ad"]);
+G2L["ae"]["Thickness"] = 3;
+
+
+-- Loader.Encrypt.Password.Background.UIGradient
+G2L["af"] = Instance.new("UIGradient", G2L["ad"]);
+G2L["af"]["Rotation"] = -90;
+G2L["af"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(68, 68, 68))};
+
+
+-- Loader.Encrypt.Password.TextBG
+G2L["b0"] = Instance.new("Frame", G2L["ab"]);
+G2L["b0"]["BorderSizePixel"] = 0;
+G2L["b0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b0"]["Size"] = UDim2.new(0, 385, 0, 50);
+G2L["b0"]["Position"] = UDim2.new(0.279, 0, 0.548, 0);
+G2L["b0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b0"]["Name"] = [[TextBG]];
+
+
+-- Loader.Encrypt.Password.TextBG.UIStroke
+G2L["b1"] = Instance.new("UIStroke", G2L["b0"]);
+G2L["b1"]["Thickness"] = 3;
+
+
+-- Loader.Encrypt.Password.TextBG.UIGradient
+G2L["b2"] = Instance.new("UIGradient", G2L["b0"]);
+G2L["b2"]["Rotation"] = -90;
+G2L["b2"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(68, 68, 68))};
+
+
+-- Loader.Encrypt.Password.PASS
+G2L["b3"] = Instance.new("TextBox", G2L["ab"]);
+G2L["b3"]["Name"] = [[PASS]];
+G2L["b3"]["PlaceholderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b3"]["BorderSizePixel"] = 0;
+G2L["b3"]["TextWrapped"] = true;
+G2L["b3"]["TextSize"] = 14;
+G2L["b3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b3"]["TextScaled"] = true;
+G2L["b3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b3"]["ClearTextOnFocus"] = false;
+G2L["b3"]["PlaceholderText"] = [[ENTER CODE]];
+G2L["b3"]["Size"] = UDim2.new(0, 385, 0, 50);
+G2L["b3"]["Position"] = UDim2.new(0.27931, 0, 0.54813, 0);
+G2L["b3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b3"]["Text"] = [[]];
+G2L["b3"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Encrypt.Password.TextLabel
+G2L["b4"] = Instance.new("TextLabel", G2L["ab"]);
+G2L["b4"]["TextWrapped"] = true;
+G2L["b4"]["BorderSizePixel"] = 0;
+G2L["b4"]["TextSize"] = 14;
+G2L["b4"]["TextScaled"] = true;
+G2L["b4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b4"]["BackgroundTransparency"] = 1;
+G2L["b4"]["Size"] = UDim2.new(0, 329, 0, 50);
+G2L["b4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b4"]["Text"] = [[ENTER KEY + CODE]];
+G2L["b4"]["Position"] = UDim2.new(0.31149, 0, 0.18717, 0);
+
+
+-- Loader.Encrypt.Password.UIDragDetector
+G2L["b5"] = Instance.new("UIDragDetector", G2L["ab"]);
+
+
+
+-- Loader.Encrypt.Password.TextBG
+G2L["b6"] = Instance.new("Frame", G2L["ab"]);
+G2L["b6"]["BorderSizePixel"] = 0;
+G2L["b6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b6"]["Size"] = UDim2.new(0, 385, 0, 50);
+G2L["b6"]["Position"] = UDim2.new(0.27785, 0, 0.39292, 0);
+G2L["b6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b6"]["Name"] = [[TextBG]];
+
+
+-- Loader.Encrypt.Password.TextBG.UIStroke
+G2L["b7"] = Instance.new("UIStroke", G2L["b6"]);
+G2L["b7"]["Thickness"] = 3;
+
+
+-- Loader.Encrypt.Password.TextBG.UIGradient
+G2L["b8"] = Instance.new("UIGradient", G2L["b6"]);
+G2L["b8"]["Rotation"] = -90;
+G2L["b8"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(68, 68, 68))};
+
+
+-- Loader.Encrypt.Password.KEY
+G2L["b9"] = Instance.new("TextBox", G2L["ab"]);
+G2L["b9"]["Name"] = [[KEY]];
+G2L["b9"]["PlaceholderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b9"]["BorderSizePixel"] = 0;
+G2L["b9"]["TextWrapped"] = true;
+G2L["b9"]["TextSize"] = 14;
+G2L["b9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b9"]["TextScaled"] = true;
+G2L["b9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b9"]["ClearTextOnFocus"] = false;
+G2L["b9"]["PlaceholderText"] = [[ENTER KEY]];
+G2L["b9"]["Size"] = UDim2.new(0, 385, 0, 50);
+G2L["b9"]["Position"] = UDim2.new(0.27701, 0, 0.39037, 0);
+G2L["b9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b9"]["Text"] = [[]];
+G2L["b9"]["BackgroundTransparency"] = 1;
+
+
+-- Loader.Notify
+G2L["ba"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["ba"]["Name"] = [[Notify]];
+
+
+-- Require G2L wrapper
+local G2L_REQUIRE = require;
+local G2L_MODULES = {};
+local function require(Module:ModuleScript)
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
+end
+
+G2L_MODULES[G2L["4"]] = {
+Closure = function()
+    local script = G2L["4"];local mName = "[AsyncHub] "
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+
+local NotificationTemplate = script:FindFirstChild('Notification')
+
+local code = ""
+local Encryption = require(script.Parent:FindFirstChild("Encryption"))
+local NotifyModule = require(script.Parent:FindFirstChild("Notify"))
+local Whitelist = require(script:FindFirstChild("Whitelist"))
+
+-- 20 speed
+
+local Core = {}
+
+function Core:IsWhitelisted(player)
+	local found = false
+	if table.find(Whitelist,player.Name) then
+		found = true
+	end
+	if table.find(Whitelist,player.DisplayName) then
+		found = true
+	end
+	if table.find(Whitelist,player.UserId) then
+		found = true
+	end
+	return found
+end
+
+function Core:InitializeUI(UI_Folder,UI)
+	local Functions = UI_Folder:FindFirstChild("Functions")
+	if not Functions then UI:Destroy() return end
+	
+	local UI_Functions = require(Functions)
+	UI_Functions:Intialize(UI)
+	
+	print(mName.."Initialized "..UI.name)
+end
+
+local function LoadUI(UI_Name)
+	task.spawn(function()
+		local UIfolder = script:FindFirstChild("UIs")
+		local RealUIfolder = UIfolder:FindFirstChild(UI_Name)
+		local UI = RealUIfolder:FindFirstChild("UI")
+
+		if not UI then return end
+		local newUI = UI:Clone()
+		newUI.Parent = LocalPlayer.PlayerGui
+		newUI.Enabled = true
+		newUI.Name = UI_Name
+
+		Core:InitializeUI(RealUIfolder,newUI)
+	end)
+end
+
+function Core:PassCorrect()
+	Core:Notify(2,"Code Correct!")
+	task.delay(1,function()
+		Core:Notify(2,"Loaded!")
+		
+		LoadUI("Hub")
+	end)
+end
+
+function Core:SetCode(Code)
+	code = Code
+	
+	local PasswordUI = script.Parent:FindFirstChild("Encrypt"):FindFirstChild("Password")
+	if not PasswordUI.Visible then return end
+	
+	local matches = Encryption:Matches(code)
+	if not matches then
+		Core:Notify(2, "Code or Key Incorrect!")
+	end
+end
+
+function Core:SetKey(key)
+	Encryption:IsRightKey(key)
+end
+
+function Core:Password()
+	local PasswordUI = script.Parent:FindFirstChild("Encrypt"):FindFirstChild("Password")
+	PasswordUI.Visible = true
+	
+	local matches = Encryption:Matches(code) or Core:IsWhitelisted(game.Players.LocalPlayer)
+	repeat
+		matches = Encryption:Matches(code) or Core:IsWhitelisted(game.Players.LocalPlayer)
+		task.wait()
+	until matches == true
+	PasswordUI.Visible = false
+end
+
+function Core:Initialize()
+	Core:Notify(2,"Initializing...")
+	task.wait(1)
+	Core:Notify(3,"Loading Base Script.")
+	task.wait(1)
+	
+	Core:Password()
+	Core:PassCorrect()
+end
+
+local Notifications = script.Parent:FindFirstChild("Notifications")
+function Core:Notify(delay: number, text: string)
+	NotifyModule:Notify(delay,mName,text)
+end
+
+return Core
+
+end;
+};
+G2L_MODULES[G2L["87"]] = {
+Closure = function()
+    local script = G2L["87"];local NotifyModule = require(script.Parent.Parent.Parent.Parent:WaitForChild("Notify"))
+local sn = "[AsyncHub] "
+local UI_Functions = {}
+
+function UI_Functions:Intialize(UI)
+	task.spawn(function()
+		local UIitemSetup = require(script:WaitForChild("UI-ItemSetup"))
+		task.spawn(function()
+			UIitemSetup:SetupItems(UI)
+		end)
+
+		local Items = UI:FindFirstChild("Frame"):FindFirstChild("items"):FindFirstChild("actualItems")
+		local UIS = game:GetService("UserInputService")
+		
+		local ItemFunctions = script:WaitForChild("Functions")
+		local loadedFunctions = {}
+		for _, func in pairs(ItemFunctions:GetChildren()) do
+			local required = require(func)
+			task.spawn(function()
+				required:Init(UIitemSetup, Items:FindFirstChild(func.Name))
+				loadedFunctions[func] = required
+			end)
+			print(sn.."Loaded Function: ",func.Name)
+		end
+		print(sn.."Loaded Functions: ",loadedFunctions)
+
+		UIS.InputBegan:Connect(function(input,isTyping)
+			if isTyping then return end
+
+			if input.KeyCode == Enum.KeyCode.CapsLock then
+				UI.Enabled = not UI.Enabled
+			end
+		end)
+
+		local Close = UI:FindFirstChild("Frame"):FindFirstChild("Close")
+		Close.Activated:Connect(function()
+			for _, func in pairs(loadedFunctions) do
+				func:Clear()
+			end
+			print(sn.."Cleared Functions")
+			UI:Destroy()
+			print(sn.."UI CLOSED!")
+		end)
+
+		-- Click To Delete
+
+		local Deleted = {}
+		local DeletedParent = {}
+
+		local isClickToDeleteOn = false
+		local HoveredObject = nil
+		local HoveredOverlay = nil
+
+		local oldTrans = {}
+
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		UIS.InputBegan:Connect(function(input, isTyping)
+			if input.KeyCode == Enum.KeyCode.F7 then
+				isClickToDeleteOn = not isClickToDeleteOn
+				local other = "OFF"
+				if isClickToDeleteOn then
+					other = "ON"
+
+					task.spawn(function()
+						for _, v in pairs(game.Workspace:GetDescendants()) do
+							if v:IsA("BasePart") then
+								if v.CanQuery == false then
+									v.CanQuery = true
+									v.CanTouch = true
+
+									print("PART FIXED: ",v.Name)
+								end
+								if v.Transparency == 1 then
+									if not oldTrans[v] then
+										oldTrans[v] = v.Transparency
+									end
+									v.Transparency = 0.8
+								end
+							end
+						end
+					end)
+					task.spawn(function()
+						repeat
+							local hit = mouse.Target
+							if hit then
+								if HoveredObject ~= hit then
+									HoveredObject = hit
+
+									if HoveredOverlay then
+										HoveredOverlay:Destroy()
+										HoveredOverlay = nil
+									end
+
+									HoveredOverlay = Instance.new("Highlight")
+									HoveredOverlay.FillTransparency = 0.85
+									HoveredOverlay.OutlineTransparency = 0.5
+
+									HoveredOverlay.FillColor = Color3.new(0, 0.666667, 1)
+									HoveredOverlay.OutlineColor = Color3.new(0, 0.666667, 1)
+									HoveredOverlay.Enabled = true
+									HoveredOverlay.Name = "HOVEREDOVERLAY-D81758232"
+
+									HoveredOverlay.Parent = HoveredObject
+								end
+							else
+								HoveredObject = nil
+								if HoveredOverlay then
+									HoveredOverlay:Destroy()
+									HoveredOverlay = nil
+								end
+							end
+
+							task.wait()
+						until isClickToDeleteOn ~= true
+					end)
+				else
+					HoveredObject = nil
+					if HoveredOverlay then
+						HoveredOverlay:Destroy()
+						HoveredOverlay = nil
+					end
+					task.spawn(function()
+						for _, v in pairs(game.Workspace:GetDescendants()) do
+							if v:IsA("BasePart") then
+								if oldTrans[v] then
+									v.Transparency = oldTrans[v]
+								end
+							end
+						end
+					end)
+				end
+
+				print("CTD Toggled: ", isClickToDeleteOn)
+				local t = "OFF"
+				if isClickToDeleteOn then
+					t = "ON"
+				end
+				NotifyModule:Notify(1,"[Hub]","Click to Deleted Toggled, "..t)
+			end
+			if input.KeyCode == Enum.KeyCode.F8 then
+				if #Deleted > 0 then
+					local DeletedOBJ = Deleted[#Deleted]
+					local d = DeletedParent[DeletedOBJ]
+
+					DeletedOBJ.Parent = d
+
+					for _, v in pairs(DeletedOBJ:GetDescendants()) do
+						if v.Name == "HOVEREDOVERLAY-D81758232" then
+							v:Destroy()
+						end
+					end 
+					if oldTrans[DeletedOBJ] then
+						DeletedOBJ.Transparency = oldTrans[DeletedOBJ]
+					end
+
+					Deleted[#Deleted] = nil
+					DeletedParent[DeletedOBJ] = nil
+
+					print("Restored Object: ", DeletedOBJ.Name)
+					NotifyModule:Notify(1,"[Hub]","Restored Object: "..DeletedOBJ.Name)
+				end
+			end
+			if input.KeyCode == Enum.KeyCode.F10 then
+				print("F10 Pressed")
+				NotifyModule:Notify(1,"[Hub]","Deleting Barriers!")
+				local dd = 0
+				for _, v in pairs(game.Workspace:GetDescendants()) do
+					if v:IsA("BasePart") then
+						if v.Transparency <= 0.85 and v.Transparency >= 0.75 then
+							if v.Color == Color3.new(1,0,0) then
+								v:Destroy()
+								dd += 1
+
+								print("BARRIER DESTROYED")
+							else
+								warn("COLOR WRONG, COLOR: ",v.Color)
+							end
+						else
+							warn("TRANSPARENCY IS WRONG: ",v.Transparency)
+						end
+					end
+					task.wait(.001)
+				end
+				if dd > 0 then
+					print("DELETED BARRIERS SUCCESS, DELETED: ".." BARRIERS!!!")
+				end
+				NotifyModule:Notify(1,"[Hub]","Success, Deleted: "..dd.." Barriers!")
+			end
+		end)
+
+		mouse.Button1Down:Connect(function()
+			if isClickToDeleteOn then
+				local object = mouse.Target
+				if object then
+					local clone = object:Clone()
+					if oldTrans[object] then
+						oldTrans[clone] = oldTrans[object]
+					end
+					Deleted[#Deleted+1] = clone
+					DeletedParent[clone] = object.Parent
+
+					print("Deleted Object: ", object.Name, " in: ", object.Parent)
+					object:Destroy()
+					NotifyModule:Notify(1,"[Main]","Deleted Object: "..object.Name)
+				end
+			end
+		end)
+
+		NotifyModule:Notify(3,"[Hub]", "Module Loaded Successfully")
+	end)
+end
+
+return UI_Functions
+end;
+};
+G2L_MODULES[G2L["88"]] = {
+Closure = function()
+    local script = G2L["88"];local TagService = game:GetService("CollectionService")
+local TS = game:GetService("TweenService")
+
+local UIitemSetup = {}
+
+function UIitemSetup:SetupItems(UI)
+	for _, v in pairs(UI:GetDescendants()) do
+		if TagService:HasTag(v, "Item") then
+			local ItemType = v:GetAttribute("ItemType")
+			if ItemType == "ToggleSlider" then
+				UIitemSetup:InitToggleSlider(v)
+			end
+			if ItemType == "TextBox" then
+				UIitemSetup:InitTextBox(v)
+			end
+			if ItemType == "Button" then
+				UIitemSetup:InitButton(v)
+			end
+		end
+	end
+end
+
+function UIitemSetup:InitButton(object)
+	local button = object:FindFirstChild("ActualButton")
+
+	local isActive = false
+	local function Update()
+		object:SetAttribute("Activated",isActive)
+	end
+
+	button.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 
+			or input.UserInputType == Enum.UserInputType.Touch then
+
+			isActive = true
+			Update()
+		end
+	end)
+
+	button.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 
+			or input.UserInputType == Enum.UserInputType.Touch then
+
+			isActive = false
+			Update()
+		end
+	end)
+end
+
+function UIitemSetup:InitTextBox(object)
+	local TextBox = object:FindFirstChild("TextBox")
+	local text = TextBox.Text
+	object:SetAttribute("Output",text)
+	
+	TextBox.Changed:Connect(function()
+		text = TextBox.Text
+		object:SetAttribute("Output",text)
+	end)
+end
+
+function UIitemSetup:InitToggleSlider(object)
+	local DefaultPosition = object:GetAttribute("DefaultPosition")
+	local Position = DefaultPosition
+	
+	local PositionType = "off"
+	if DefaultPosition == true then
+		PositionType = "on"
+	end
+	
+	local toggleObject = object:FindFirstChild(PositionType):Clone()
+	toggleObject.Parent = object
+	toggleObject.Name = "ToggleObject"
+	toggleObject.Visible = true
+	
+	local Debounce = false
+	local function Toggle()
+		local ColorInfo = TweenInfo.new(0.5/2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut)
+		local SliderInfo = TweenInfo.new(0.75/2,Enum.EasingStyle.Linear,Enum.EasingDirection.Out)
+		if Position == true then
+			local ColorTween = TS:Create(object,ColorInfo,{
+				BackgroundColor3 = Color3.fromRGB(0, 179, 0)
+			}):Play()
+		else
+			local ColorTween = TS:Create(object,ColorInfo,{
+				BackgroundColor3 = Color3.fromRGB(212, 0, 0)
+			}):Play()
+		end
+		local pType = "off"
+		if Position == true then
+			pType = "on"
+		end
+		
+		local SliderTween = TS:Create(toggleObject,SliderInfo,{
+			Position = object:FindFirstChild(pType).Position
+		}):Play()
+		object:SetAttribute("Position",Position)
+	end
+	Toggle()
+	
+	local ActualButton = object:FindFirstChild("ActualButton")
+	ActualButton.Activated:Connect(function()
+		if Debounce then return end
+		Debounce = true
+		task.delay(0.4,function()
+			Debounce = false
+		end)
+		
+		Position = not Position
+		Toggle()
+	end)
+end
+
+function UIitemSetup:GetItemChangeSignal(object, objectType)
+	local outputType
+
+	if objectType == "ToggleSlider" then
+		outputType = "Position"
+	elseif objectType == "TextBox" then
+		outputType = "Output"
+	elseif objectType == "Button" then
+		outputType = "Activated"
+	end
+
+	local bindable = Instance.new("BindableEvent")
+
+	object:GetAttributeChangedSignal(outputType):Connect(function()
+		local value = object:GetAttribute(outputType)
+		bindable:Fire(value)
+	end)
+
+	return bindable.Event
+end
+
+return UIitemSetup
+end;
+};
+G2L_MODULES[G2L["a3"]] = {
+Closure = function()
+    local script = G2L["a3"];local NotifyModule = require(script.Parent.Parent:WaitForChild("Notify"))
+local items = {}
+
+local ItemFunction = {}
+
+function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
+	
+	local sn = "[ASYNC] [Floater] "
+	NotifyModule:Notify(3,sn,"Loaded!")
+
+	local UIS = game:GetService("UserInputService")
+
+	local Player = game.Players.LocalPlayer
+	local RunService = game:GetService("RunService")
+
+	local Character = Player.Character
+	if not Character then script.Parent:Destroy() end
+
+	local Root = Character:WaitForChild("HumanoidRootPart")
+	local Pos = Root.Position - Vector3.new(0,3.5,0)
+
+	local FloaterPart = nil
+	local function DoesFloaterExist()
+		if FloaterPart and FloaterPart ~= nil and FloaterPart.Parent ~= nil then
+			return true
+		end
+		return false
+	end
+	local function SpawnFloater()
+		if DoesFloaterExist() then return end
+		local new = Instance.new("Part")
+		new.Anchored = true
+		new.Parent = game.Workspace
+		new.Position = Pos
+		new.Size = Vector3.new(3,0.5,3)
+		new.Color = Color3.new(0,0,0)
+		new.Name = "FloatingPlatform"
+		new.CastShadow = false
+		new.Transparency = 0
+		new.Material = Enum.Material.Neon
+
+		local outline = Instance.new("Highlight")
+		outline.FillColor = Color3.new(1,1,1)
+		outline.FillTransparency = 0.5
+		outline.OutlineColor = Color3.new(1, 1, 1)
+		outline.OutlineTransparency = 0.5
+		outline.Adornee = new
+		outline.Parent = new
+
+		FloaterPart = new
+		items[#items+1] = new
+	end
+	
+	local function Enable()
+		SpawnFloater()
+
+		local baseY = Pos.Y
+		local y = 0
+		task.spawn(function()
+			items[#items+1] = RunService.RenderStepped:Connect(function()
+				local addPos = Vector3.new(0,y,0)
+				local Pos = Vector3.new(Root.Position.X,baseY,Root.Position.Z) + addPos
+				FloaterPart.Position = Pos
+				SpawnFloater()
+			end)
+		end)
+
+		items[#items+1] = UIS.InputBegan:Connect(function(input,isTyping)
+			if not isTyping then
+				if input.KeyCode == Enum.KeyCode.Up then
+					y += 2.2
+				end
+				if input.KeyCode == Enum.KeyCode.Down then
+					y -= 2.2
+				end
+			end
+		end)
+		
+		items[#items+1] = UIitemSetup:GetItemChangeSignal(item:FindFirstChild("up"), "Button"):Connect(function(val)
+			if not val then return end
+			y += 2.2
+		end)
+		items[#items+1] = UIitemSetup:GetItemChangeSignal(item:FindFirstChild("down"), "Button"):Connect(function(val)
+			if not val then return end
+			y -= 2.2
+		end)
+	end
+	
+	UIitemSetup:GetItemChangeSignal(item:FindFirstChild("toggle"), "ToggleSlider"):Connect(function(val)
+		if val then
+			Enable()
+		else
+			ItemFunction:Clear()
+		end
+	end)
+	
+end
+
+function ItemFunction:Clear()
+	for i, v in ipairs(items) do
+		if typeof(v) == "RBXScriptConnection" then
+			if v.Connected then
+				v:Disconnect()
+			end
+
+		elseif typeof(v) == "Instance" then
+			if v.Parent then
+				v:Destroy()
+			end
+
+		elseif type(v) == "function" then
+			-- optional: allow custom cleanup functions
+			v()
+
+		elseif type(v) == "table" then
+			-- if you ever store objects with a Destroy/Cleanup method
+			if v.Destroy then
+				v:Destroy()
+			elseif v.Cleanup then
+				v:Cleanup()
+			end
+		end
+
+		items[i] = nil
+	end
+end
+
+return ItemFunction
+end;
+};
+G2L_MODULES[G2L["a4"]] = {
+Closure = function()
+    local script = G2L["a4"];local NotifyModule = require(script.Parent.Parent:WaitForChild("Notify"))
+local items = {}
+
+local ItemFunction = {}
+
+function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
+	
+	local sn = "[ASYNC] [ESP] "
+	NotifyModule:Notify(3,sn,"Loaded!")
+	
+	-- MONSTER
+	
+	local isOn = false
+	
+	local overlays = {}
+	local MonsterIndicators = {}
+	local function AddMonsterIndicator(rig)
+		if MonsterIndicators[rig] then
+			return
+		end
+
+		local Indicator = Instance.new("BillboardGui")
+		Indicator.Size = UDim2.new(5,0,2,0)
+		Indicator.StudsOffset = Vector3.new(0,4,0)
+		Indicator.AlwaysOnTop = true
+		Indicator.Name = "HUDIndicator-!842F"
+		Indicator.Adornee = rig:FindFirstChild("Head")
+
+		local TextIndicator = Instance.new("TextLabel",Indicator)
+		TextIndicator.Size = UDim2.new(1,0,1,0)
+		TextIndicator.BackgroundTransparency = 1
+		TextIndicator.TextColor3 = Color3.new(255,255,255)
+		TextIndicator.Name = rig.Name
+		TextIndicator.TextScaled = true
+
+		local monsterName = string.split(rig.Name,"Monster")
+		TextIndicator.Text = monsterName[1]
+
+		Indicator.Parent = rig
+		MonsterIndicators[rig] = Indicator
+		items[#items+1] = Indicator
+	end
+
+	local function Toggle(tog)
+		if tog then
+			task.spawn(function()
+				while isOn == true do
+					for _, v in pairs(game.Workspace:GetDescendants()) do
+						local object = v 
+						if not object:IsA("BasePart") and not object:IsA("BillboardGui") and object:IsA("Model") then
+							if string.find(string.lower(object.Name), "monster") then
+								if not overlays[object] then
+									local overlay = Instance.new("Highlight")
+									overlay.Enabled = true
+									overlay.Parent = object
+									overlay.FillTransparency = 0.5
+									overlay.OutlineTransparency = 0.5
+
+									overlay.FillColor = Color3.new(0.560784, 0, 0)
+									overlay.OutlineColor = Color3.new(0.560784, 0, 0)
+
+									overlays[object] = overlay
+									items[#items+1] = overlay
+									AddMonsterIndicator(object)
+
+									print("Marked: ", object.Name)
+								end
+							end
+						end
+					end
+					task.wait(1.5)
+				end
+			end)
+		else
+			for _, overlay in overlays do
+				overlay:Destroy()
+			end
+			for _, indicator in MonsterIndicators do
+				indicator:Destroy()
+			end
+			table.clear(overlays)
+			table.clear(MonsterIndicators)
+		end
+	end
+	
+	UIitemSetup:GetItemChangeSignal(item:FindFirstChild("MonsterSlider"), "ToggleSlider"):Connect(function(val)
+		isOn = not isOn
+		Toggle(val)
+	end)
+	
+	-- PLAYERS
+	
+	local isPlayersOn = false
+	
+	local PlayerOverlays = {}
+	local PlayerIndicators = {}
+
+	local function AddPlayerIndicator(rig,playerName)
+		if PlayerIndicators[rig] then
+			return
+		end
+
+		local Indicator = Instance.new("BillboardGui")
+		Indicator.Size = UDim2.new(5,0,2,0)
+		Indicator.StudsOffset = Vector3.new(0,4,0)
+		Indicator.AlwaysOnTop = true
+		Indicator.Name = "HUDIndicator-!842E"
+		Indicator.Adornee = rig:FindFirstChild("Head")
+
+		local TextIndicator = Instance.new("TextLabel",Indicator)
+		TextIndicator.Size = UDim2.new(1,0,1,0)
+		TextIndicator.BackgroundTransparency = 1
+		TextIndicator.TextColor3 = Color3.new(0.333333, 1, 0)
+		TextIndicator.Name = rig.Name
+		TextIndicator.TextScaled = true
+
+		TextIndicator.Text = playerName
+
+		Indicator.Parent = rig
+		PlayerIndicators[rig] = Indicator
+		items[#items+1] = Indicator
+	end
+
+	local function TogglePlayers(tog)
+		if tog then
+			task.spawn(function()
+				while isPlayersOn do
+					local Players = game:GetService("Players")
+					for _, p in pairs(Players:GetPlayers()) do
+						if p ~= Players.LocalPlayer then
+							local object = p.Character
+							if object then
+								if not PlayerOverlays[object] then
+									local overlay = Instance.new("Highlight")
+									overlay.Enabled = true
+									overlay.Parent = object
+									overlay.FillTransparency = 0.5
+									overlay.OutlineTransparency = 0.5
+
+									overlay.FillColor = Color3.new(0, 0.666667, 0)
+									overlay.OutlineColor = Color3.new(0, 0.666667, 0)
+
+									PlayerOverlays[object] = overlay
+									items[#items+1] = overlay
+									AddPlayerIndicator(object, p.DisplayName)
+
+									print("Marked Ally: ", object.Name, p.DisplayName)
+								end
+							end
+						end
+					end
+					task.wait(1.5)
+				end
+			end)
+		else
+			for _, overlay in PlayerOverlays do
+				overlay:Destroy()
+			end
+			for _, indicator in PlayerIndicators do
+				indicator:Destroy()
+			end
+			table.clear(PlayerOverlays)
+			table.clear(PlayerIndicators)
+
+			print("UNMARKED ALLIES")
+		end
+	end
+	
+	UIitemSetup:GetItemChangeSignal(item:FindFirstChild("PlayerSlider"), "ToggleSlider"):Connect(function(val)
+		isPlayersOn = not isPlayersOn
+		TogglePlayers(val)
+	end)
+	
+end
+
+function ItemFunction:Clear()
+	for i, v in ipairs(items) do
+		if typeof(v) == "RBXScriptConnection" then
+			if v.Connected then
+				v:Disconnect()
+			end
+
+		elseif typeof(v) == "Instance" then
+			if v.Parent then
+				v:Destroy()
+			end
+
+		elseif type(v) == "function" then
+			-- optional: allow custom cleanup functions
+			v()
+
+		elseif type(v) == "table" then
+			-- if you ever store objects with a Destroy/Cleanup method
+			if v.Destroy then
+				v:Destroy()
+			elseif v.Cleanup then
+				v:Cleanup()
+			end
+		end
+
+		items[i] = nil
+	end
+end
+
+return ItemFunction
+end;
+};
+G2L_MODULES[G2L["a5"]] = {
+Closure = function()
+    local script = G2L["a5"];local NotifyModule = require(script.Parent.Parent:WaitForChild("Notify"))
+local RunService = game:GetService("RunService")
+local oldSpeed = 0
+
+local items = {}
+
+local ItemFunction = {}
+
+function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
+	
+	local defaultSpeed = 20
+	local sprint = 0
+	
+	local function Enable()
+		
+		local p = game.Players.LocalPlayer
+		local c = p.Character
+		if not c then return end
+		local h = c:WaitForChild("Humanoid")
+		if not h then return end
+		if oldSpeed == 0 then
+			oldSpeed = h.WalkSpeed
+		end
+		
+		local ds = 0
+		if oldSpeed ~= defaultSpeed then
+			ds = oldSpeed
+		else
+			ds = defaultSpeed
+		end
+		
+		p:SetAttribute("AsyncHubSpeed",5)
+
+		local UIS = game:GetService("UserInputService")
+		task.spawn(function()
+			items[#items+1] = RunService.RenderStepped:Connect(function()
+				task.wait()
+				
+				c = p.Character
+				if not c then return end
+				h = c:FindFirstChild("Humanoid")
+				if not h then return end
+				
+				local addSpeed = p:GetAttribute("AsyncHubSpeed")
+				for _, v in pairs(c:GetChildren()) do
+					if v:IsA("BasePart") then
+						v.Anchored = false
+					end
+				end
+				h.WalkSpeed = ds+addSpeed+sprint
+			end)
+		end)
+		items[#items+1] = UIS.InputBegan:Connect(function(input,isTyping)
+				if input.KeyCode == Enum.KeyCode.LeftShift then
+					sprint = 5
+				end
+		end)
+		items[#items+1] = UIS.InputEnded:Connect(function(input)
+			if input.KeyCode == Enum.KeyCode.LeftShift then
+				sprint = 0
+			end
+		end)
+	end
+	
+	UIitemSetup:GetItemChangeSignal(item:FindFirstChild("TextBox"), "TextBox"):Connect(function(val)
+		local actual = tonumber(val)
+		if actual ~= nil then
+			local p = game.Players.LocalPlayer
+			p:SetAttribute("AsyncHubSpeed",actual)
+		end
+	end)
+	
+	UIitemSetup:GetItemChangeSignal(item:FindFirstChild("ToggleSlider"), "ToggleSlider"):Connect(function(val)
+		if val then
+			Enable()
+		else
+			task.spawn(function()
+				local p = game.Players.LocalPlayer
+				local c = p.Character
+				if not c then return end
+				local h = c:WaitForChild("Humanoid")
+				if not h then return end
+
+				h.WalkSpeed = oldSpeed
+			end)
+			ItemFunction:Clear()
+		end
+	end)
+	
+	local sn = "[ASYNC] [SPEED] "
+	NotifyModule:Notify(3,sn,"Loaded!")
+	
+end
+
+function ItemFunction:Clear()
+	task.spawn(function()
+		local p = game.Players.LocalPlayer
+		local c = p.Character
+		if not c then return end
+		local h = c:WaitForChild("Humanoid")
+		if not h then return end
+
+		h.WalkSpeed = oldSpeed
+	end)
+	for i, v in ipairs(items) do
+		if typeof(v) == "RBXScriptConnection" then
+			if v.Connected then
+				v:Disconnect()
+			end
+
+		elseif typeof(v) == "Instance" then
+			if v.Parent then
+				v:Destroy()
+			end
+
+		elseif type(v) == "function" then
+			-- optional: allow custom cleanup functions
+			v()
+
+		elseif type(v) == "table" then
+			-- if you ever store objects with a Destroy/Cleanup method
+			if v.Destroy then
+				v:Destroy()
+			elseif v.Cleanup then
+				v:Cleanup()
+			end
+		end
+
+		items[i] = nil
+	end
+end
+
+return ItemFunction
+end;
+};
+G2L_MODULES[G2L["a6"]] = {
+Closure = function()
+    local script = G2L["a6"];local NF = {}
+
+function NF:Notify(delay: number, module: string, text: string)
+	local icon = "rbxassetid://9027816797"
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = module,
+		Text = text,
+		Icon = icon,
+		Duration = delay
+	})
+end
+
+return NF
+
+end;
+};
+G2L_MODULES[G2L["a7"]] = {
+Closure = function()
+    local script = G2L["a7"];return {
+	"bodor999_hand"
+}
+end;
+};
+G2L_MODULES[G2L["a9"]] = {
+Closure = function()
+    local script = G2L["a9"];local ECR = {}
+
+local function encrypt(text, key)
+	local result = ""
+
+	for i = 1, #text do
+		local char = string.byte(text, i)
+		local keyChar = string.byte(key, ((i - 1) % #key) + 1)
+
+		local encryptedChar = (char + keyChar) % 256
+		result = result .. string.char(encryptedChar)
+	end
+
+	return result
+end
+
+local function decrypt(text, key)
+	local result = ""
+
+	for i = 1, #text do
+		local char = string.byte(text, i)
+		local keyChar = string.byte(key, ((i - 1) % #key) + 1)
+
+		local decryptedChar = (char - keyChar) % 256
+		result = result .. string.char(decryptedChar)
+	end
+
+	return result
+end
+
+local publicKey = "lKF=1qUS9=ybHJ"
+local key = "basedKey"
+
+local HttpService = game:GetService("HttpService")
+
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+
+local function base64Encode(data)
+	return ((data:gsub('.', function(x)
+		local r,bits='',x:byte()
+		for i=8,1,-1 do
+			r = r .. (bits%2^i - bits%2^(i-1) > 0 and '1' or '0')
+		end
+		return r
+	end)..'0000'):gsub('%d%d%d?%d?%d?%d?', function(x)
+		if (#x < 6) then return '' end
+		local c=0
+		for i=1,6 do
+			c = c + (x:sub(i,i)=='1' and 2^(6-i) or 0)
+		end
+		return b:sub(c+1,c+1)
+	end)..({ '', '==', '=' })[#data%3+1])
+end
+
+local function base64Decode(data)
+	data = string.gsub(data, '[^'..b..'=]', '')
+	return (data:gsub('.', function(x)
+		if (x == '=') then return '' end
+		local r,f='',(b:find(x)-1)
+		for i=6,1,-1 do
+			r = r .. (f%2^i - f%2^(i-1) > 0 and '1' or '0')
+		end
+		return r
+	end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
+		if (#x ~= 8) then return '' end
+		local c=0
+		for i=1,8 do
+			c = c + (x:sub(i,i)=='1' and 2^(8-i) or 0)
+		end
+		return string.char(c)
+	end))
+end
+
+local function secureEncode(text, key)
+	return base64Encode(encrypt(text, key))
+end
+
+local function secureDecode(text, key)
+	return decrypt(base64Decode(text), key)
+end
+
+function ECR:IsRightKey(attempt)
+	if attempt == secureDecode("0oyztXehkoVig/Kt",publicKey) then
+		key = secureDecode("0oyztXehkoVig/Kt",publicKey)
+	else
+		key = attempt
+	end
+end
+
+function ECR:Matches(code)
+	if code == nil then return false end
+	if code == secureDecode("uXme0bl7bWNmZ7Kv3qKemYNt",key) then
+		return true
+	end
+	return false
+end
+
+return ECR
+
+end;
+};
+G2L_MODULES[G2L["ba"]] = {
+Closure = function()
+    local script = G2L["ba"];local NF = {}
+
+function NF:Notify(delay: number, module: string, text: string)
+	local icon = "rbxassetid://9027816797"
+
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = module,
+		Text = text,
+		Icon = icon,
+		Duration = delay
+	})
+end
+
+return NF
+
+end;
+};
+-- Loader.Loader
+local function C_a8()
+local script = G2L["a8"];
+	local mName = "[AsyncHub] "
+	print(mName.."Loader: Loaded")
+	local Core = require(script.Parent:WaitForChild("Core"))
+	
+	local UIS = game:GetService("UserInputService")
+	task.spawn(function()
+		UIS.InputBegan:Connect(function(input)
+			if input.KeyCode == Enum.KeyCode.Return then
+				local PasswordUI = script.Parent:FindFirstChild("Encrypt"):FindFirstChild("Password")
+				local Code = PasswordUI:FindFirstChild("PASS")
+				local Key = PasswordUI:FindFirstChild("KEY")
+	
+				Core:SetCode(Code.Text)
+				if Key.Text ~= "" then
+					Core:SetKey(Key.Text)
+				end
+			end
+		end)
+	end)
+	
+	print(mName.."Initializing...")
+	task.spawn(function()
+		Core:Initialize()
+	end)
+end;
+task.spawn(C_a8);
+
+return G2L["1"], require;
