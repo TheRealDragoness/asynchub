@@ -2563,7 +2563,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 		local TextIndicator = Instance.new("TextLabel",Indicator)
 		TextIndicator.Size = UDim2.new(1,0,1,0)
 		TextIndicator.BackgroundTransparency = 1
-		TextIndicator.TextColor3 = Color3.new(1, 0.666667, 0)
+		TextIndicator.TextColor3 = Color3.new(0.729412, 0.729412, 0.729412)
 		TextIndicator.Name = rig.Name
 		TextIndicator.Text = rig.Name
 		
@@ -2591,8 +2591,8 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 						overlay.FillTransparency = 0.5
 						overlay.OutlineTransparency = 0.5
 
-						overlay.FillColor = Color3.new(1, 0.666667, 0)
-						overlay.OutlineColor = Color3.new(1, 0.666667, 0)
+						overlay.FillColor = Color3.new(0, 0, 0)
+						overlay.OutlineColor = Color3.new(0.741176, 0.741176, 0.741176)
 
 						objectOverlays[object] = overlay
 						items[#items+1] = overlay
