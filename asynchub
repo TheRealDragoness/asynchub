@@ -2349,6 +2349,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 							if string.find(string.lower(object.Name), "monster") then
 								if not overlays[object] then
 									local overlay = Instance.new("Highlight")
+									overlay.Name = "IndicatorHUD--"
 									overlay.Enabled = true
 									overlay.Parent = object
 									overlay.FillTransparency = 0.5
@@ -2375,6 +2376,11 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 			end
 			for _, indicator in MonsterIndicators do
 				indicator:Destroy()
+			end
+			for _, obj in pairs(game.Workspace:GetDescendants()) do
+				if obj.Name == "HUDIndicator-!842F" or obj.Name == "IndicatorHUD--" then
+					obj:Destroy()
+				end
 			end
 			table.clear(overlays)
 			table.clear(MonsterIndicators)
@@ -2430,6 +2436,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 							if object then
 								if not PlayerOverlays[object] then
 									local overlay = Instance.new("Highlight")
+									overlay.Name = "IndicatorHUD--"
 									overlay.Enabled = true
 									overlay.Parent = object
 									overlay.FillTransparency = 0.5
@@ -2456,6 +2463,11 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 			end
 			for _, indicator in PlayerIndicators do
 				indicator:Destroy()
+			end
+			for _, obj in pairs(game.Workspace:GetDescendants()) do
+				if obj.Name == "HUDIndicator-!842E" or obj.Name == "IndicatorHUD--" then
+					obj:Destroy()
+				end
 			end
 			table.clear(PlayerOverlays)
 			table.clear(PlayerIndicators)
@@ -2530,6 +2542,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 					local ty = v.Name
 					if ty == "Generators" then
 						local overlay = Instance.new("Highlight")
+						overlay.Name = "IndicatorHUD--"
 						overlay.Enabled = true
 						overlay.Parent = object
 						overlay.FillTransparency = 0.5
@@ -2540,8 +2553,12 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 
 						objectOverlays[object] = overlay
 						items[#items+1] = overlay
+						AddObjectIndicator(object,ty)
+						
+						print("Marked Object: ", object.Name, "Type: ",ty)
 					else
 						local overlay = Instance.new("Highlight")
+						overlay.Name = "IndicatorHUD--"
 						overlay.Enabled = true
 						overlay.Parent = object
 						overlay.FillTransparency = 0.5
@@ -2552,10 +2569,10 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 
 						objectOverlays[object] = overlay
 						items[#items+1] = overlay
+						AddObjectIndicator(object,ty)
+						
+						print("Marked Object: ", object.Name, "Type: ",ty)
 					end
-					AddObjectIndicator(object,ty)
-
-					print("Marked Object: ", object.Name, "Type: ",ty)
 				end
 			end
 		end
@@ -2585,6 +2602,11 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 			end
 			for _, indicator in objectIndicators do
 				indicator:Destroy()
+			end
+			for _, obj in pairs(game.Workspace:GetDescendants()) do
+				if obj.Name == "HUDIndicator-!842Z" or obj.Name == "IndicatorHUD--" then
+					obj:Destroy()
+				end
 			end
 			table.clear(objectOverlays)
 			table.clear(objectIndicators)
@@ -2792,7 +2814,7 @@ end;
 G2L_MODULES[G2L["b6"]] = {
 Closure = function()
     local script = G2L["b6"];return {
-	"bodor999_hand"
+	--"bodor999_hand"
 }
 end;
 };
