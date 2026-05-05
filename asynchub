@@ -2949,8 +2949,10 @@ local function secureDecode(text, key)
 end
 
 function ECR:IsRightKey(attempt)
-	if attempt == secureDecode("0oyztXehkoVig/Kt",publicKey) then
-		key = secureDecode("0oyztXehkoVig/Kt",publicKey)
+	-- "0oyztXehkoVig/Kt"
+	local newK = "qbGfdWPLkg=="
+	if attempt == secureDecode(newK,publicKey) then
+		key = secureDecode(newK,publicKey)
 	else
 		key = attempt
 	end
@@ -2958,7 +2960,7 @@ end
 
 function ECR:Matches(code)
 	if code == nil then return false end
-	if code == secureDecode("uXme0bl7bWNmZ7Kv3qKemYNt",key) then
+	if code == secureDecode("Xoe/g1+0dnDMpZKks663tpZ1",key) then
 		return true
 	end
 	return false
