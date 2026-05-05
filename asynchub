@@ -2861,7 +2861,7 @@ end;
 G2L_MODULES[G2L["b6"]] = {
 Closure = function()
     local script = G2L["b6"];return {
-	--"bodor999_hand"
+	"bodor999_hand"
 }
 end;
 };
