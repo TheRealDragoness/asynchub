@@ -2647,6 +2647,9 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 	local defaultSpeed = 20
 	local sprint = 0
 	
+	local p = game.Players.LocalPlayer
+	p:SetAttribute("AsyncHubSpeed",5)
+	
 	local function Enable()
 		
 		local p = game.Players.LocalPlayer
@@ -2664,8 +2667,6 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 		else
 			ds = defaultSpeed
 		end
-		
-		p:SetAttribute("AsyncHubSpeed",5)
 
 		local UIS = game:GetService("UserInputService")
 		task.spawn(function()
