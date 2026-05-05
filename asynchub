@@ -2479,7 +2479,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 		local RoomLoc = game.Workspace:FindFirstChild("CurrentRoom")
 		if not RoomLoc then return nil end
 		
-		local map = RoomLoc[1]
+		local map = RoomLoc:GetChildren()[1]
 		if map and map ~= nil and map.Parent ~= nil then
 			return map
 		else
