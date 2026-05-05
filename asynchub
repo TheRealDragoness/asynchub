@@ -1991,7 +1991,6 @@ function UI_Functions:Intialize(UI)
 							warn("TRANSPARENCY IS WRONG: ",v.Transparency)
 						end
 					end
-					task.wait(.001)
 				end
 				if dd > 0 then
 					print("DELETED BARRIERS SUCCESS, DELETED: ".." BARRIERS!!!")
@@ -2500,16 +2499,16 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 		end
 
 		local Indicator = Instance.new("BillboardGui")
-		Indicator.Size = UDim2.new(5,0,2,0)
+		Indicator.Size = UDim2.new(10,0,4,0)
 		Indicator.StudsOffset = Vector3.new(0,4,0)
 		Indicator.AlwaysOnTop = true
-		Indicator.Name = "HUDIndicator-!842E"
+		Indicator.Name = "HUDIndicator-!842Z"
 		Indicator.Adornee = rig:FindFirstChild("Head")
 
 		local TextIndicator = Instance.new("TextLabel",Indicator)
 		TextIndicator.Size = UDim2.new(1,0,1,0)
 		TextIndicator.BackgroundTransparency = 1
-		TextIndicator.TextColor3 = Color3.new(0.333333, 1, 0)
+		TextIndicator.TextColor3 = Color3.new(1, 0.666667, 0)
 		TextIndicator.Name = rig.Name
 		TextIndicator.Text = rig.Name
 		
@@ -2536,8 +2535,8 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 						overlay.FillTransparency = 0.5
 						overlay.OutlineTransparency = 0.5
 
-						overlay.FillColor = Color3.new(0, 0.666667, 0)
-						overlay.OutlineColor = Color3.new(0, 0.666667, 0)
+						overlay.FillColor = Color3.new(1, 0.666667, 0)
+						overlay.OutlineColor = Color3.new(1, 0.666667, 0)
 
 						objectOverlays[object] = overlay
 						items[#items+1] = overlay
@@ -2554,7 +2553,7 @@ function ItemFunction:Init(UIitemSetup: ModuleScript, item: Object)
 						objectOverlays[object] = overlay
 						items[#items+1] = overlay
 					end
-					AddPlayerIndicator(object,ty)
+					AddObjectIndicator(object,ty)
 
 					print("Marked Object: ", object.Name, "Type: ",ty)
 				end
