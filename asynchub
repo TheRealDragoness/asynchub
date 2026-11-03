@@ -1753,7 +1753,7 @@ local function LoadUI(UI_Name)
 end
 
 function Core:PassCorrect()
-	Core:Notify(2,"Code Correct!")
+	--Core:Notify(2,"Code Correct!")
 	task.delay(1,function()
 		Core:Notify(2,"Loaded!")
 		
@@ -1795,7 +1795,7 @@ function Core:Initialize()
 	Core:Notify(3,"Loading Base Script.")
 	task.wait(1)
 	
-	Core:Password()
+	--Core:Password()
 	Core:PassCorrect()
 end
 
